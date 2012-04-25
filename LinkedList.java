@@ -94,4 +94,41 @@ public class LinkedList {
 			}
 		}
 	}
+	
+	public int length ()
+	{
+		int count = 0;
+		ListNode current = front;
+		while(current != null)
+		{
+			count++;
+			current = current.next;
+		}
+		
+		return count;
+	}
+	
+	public ListNode pointNth(int n)
+	{
+		if(this.front == null || (this.length() < n) || n < 1)
+		{
+			return null;
+		}
+		
+		ListNode start = front;
+		ListNode end = front;
+		
+		for(int i = 0; i < n; i++)
+		{
+			end = end.next;
+		}
+		
+		while(end != null)
+		{
+			end = end.next;
+			start = start.next;
+		}
+		
+		return start;
+	}
 }
