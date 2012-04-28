@@ -1,6 +1,27 @@
 
 public class CP_2 {
 	
+	public static ListNode returnTheFirstCycleNode (LinkedList l)
+	{
+		ListNode current = l.front;
+		ListNode check;
+		
+		while(current != null)
+		{
+			check = current;
+			while(check != null)
+			{
+				if(check.next == current)//find the cycle 
+					return current;
+				check = check.next;
+			}
+			
+			current = current.next;
+		}
+		
+		return null;
+	}
+	
 	public static LinkedList sumLists (LinkedList l1, LinkedList l2)
 	{
 		LinkedList result = new LinkedList();
@@ -65,7 +86,7 @@ public class CP_2 {
 		//list.printList();
 		
 		//2.4 test
-		LinkedList l1 = new LinkedList();
+		/*LinkedList l1 = new LinkedList();
 		l1.append(8);
 		l1.append(2);
 		l1.append(8);
@@ -76,7 +97,8 @@ public class CP_2 {
 		
 		LinkedList result = new LinkedList (sumLists(l1,l2));
 		
-		result.printList();
+		result.printList();*/
+		
 	}
 
 }
