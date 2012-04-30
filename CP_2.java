@@ -1,6 +1,27 @@
 
 public class CP_2 {
 	
+	public static void reverseAlinkedList (LinkedList l)
+	{
+		ListNode near = l.front;
+		ListNode mid = near.next;
+		ListNode far = mid.next;
+		
+		near.next = null;
+		
+		while(far != null)
+		{
+			mid.next = near;
+			
+			near = mid;
+			mid = far;
+			far = far.next;
+		}
+		
+		mid.next = near;
+		l.front = mid;
+	}
+	
 	public static ListNode returnTheFirstCycleNode (LinkedList l)
 	{
 		ListNode current = l.front;
@@ -76,7 +97,6 @@ public class CP_2 {
 		list.append(3);
 		list.append(4);
 		list.append(5);
-		list.append(5);
 		
 		//list.printList();
 		//int nthVal = list.pointNth(1).val;
@@ -98,6 +118,11 @@ public class CP_2 {
 		LinkedList result = new LinkedList (sumLists(l1,l2));
 		
 		result.printList();*/
+		
+		//reverse a linked list
+		list.printList();
+		reverseAlinkedList(list);
+		list.printList();
 		
 	}
 
