@@ -1,4 +1,3 @@
-
 public class CP_2 {
 	
 	public static void reverseAlinkedList (LinkedList l)
@@ -72,13 +71,18 @@ public class CP_2 {
 				
 				if(carry > 0)
 				{
-					if(c2.next == null)
-					{
-						l2.append(carry);
-					}else
-					{
-						c2.next.val += 1;
-					}
+				 	if(c2.next == null)
+                                        {
+                                            	l2.append(carry);
+                                        }
+                                        else if (c1.next == null)
+                                        {
+                                                l1.append(carry);
+                                        }
+                                        else
+                                        {
+                                                c2.next.val += 1;
+                                        }	
 				}
 				result.append(sum);
 				c1 = c1.next;
